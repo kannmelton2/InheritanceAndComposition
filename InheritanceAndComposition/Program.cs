@@ -1,4 +1,5 @@
 ﻿using InheritanceAndComposition.LegoPieces.Heads;
+using InheritanceAndComposition.LegoPieces.Torsos;
 using System;
 using System.Collections.Generic;
 
@@ -47,6 +48,11 @@ namespace InheritanceAndComposition
                 head.Greet();
             }
 
+            var farmerTorso = new FarmerTorso(Sex.Male);
+            var ninjaTorso = new NinjaTorso();
+
+            farmerTorso.PickUp("goat in pjs");
+            ninjaTorso.PickUp("Box");
             
         }
     }
