@@ -33,10 +33,8 @@ namespace InheritanceAndComposition.LegoPieces.Torsos
             }
         }
 
-        protected virtual bool IsStrong()
-        {
-            return ArmType == ArmType.Strong;
-        }
+        // abstract method, must be overriden in every class that inherits from this class
+        protected abstract bool IsStrong();
     }
     enum ArmType
     {

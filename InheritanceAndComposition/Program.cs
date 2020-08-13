@@ -1,4 +1,5 @@
 ﻿using InheritanceAndComposition.LegoPieces.Heads;
+using InheritanceAndComposition.LegoPieces.Legs;
 using InheritanceAndComposition.LegoPieces.Torsos;
 using System;
 using System.Collections.Generic;
@@ -14,37 +15,43 @@ namespace InheritanceAndComposition
             // nor can the cowgirl flip her hair
             // neither can the pirate sing
             Head astro = new AstronautHead();
-            Head pirateHead = new PirateHead();
-            Head cowgirlHead = new Cowgirl();
+            Head pirate = new PirateHead();
+            Head cowgirl = new CowgirlHead();
 
 
-            cowgirlHead.Greet();
-            pirateHead.Greet();
+            cowgirl.Greet();
+            pirate.Greet();
             astro.Greet();
 
-            var majorTom = new AstronautHead();
-            var capnJack = new PirateHead();
-            var jessy = new Cowgirl();
+            // by not directly defining these heads as "Head",
+            // you have access to all the common "Head" things and
+            // access to all the individual things,
+            // but they are still "Head"s
+            var astronautHead = new AstronautHead();
+            var pirateHead = new PirateHead();
+            var cowgirlHead = new CowgirlHead();
 
-            majorTom.HairColor = HairColor.Blonde;
-            majorTom.EyeColor = EyeColor.Gray;
+            astronautHead.HairColor = HairColor.Blonde;
+            astronautHead.EyeColor = EyeColor.Gray;
 
-            capnJack.HairColor = HairColor.Brown;
-            capnJack.EyeColor = EyeColor.Brown;
+            pirateHead.HairColor = HairColor.Brown;
+            pirateHead.EyeColor = EyeColor.Brown;
 
-            jessy.HairColor = HairColor.Red;
-            jessy.EyeColor = EyeColor.Blue;
+            cowgirlHead.HairColor = HairColor.Red;
+            cowgirlHead.EyeColor = EyeColor.Blue;
 
             var heads = new List<Head>();
-            heads.Add(capnJack);
-            heads.Add(jessy);
-            heads.Add(majorTom);
+            heads.Add(pirateHead);
+            heads.Add(cowgirlHead);
+            heads.Add(astronautHead);
+
+            Console.WriteLine(new string('-', 50));
 
             // again, they are being defined as Heads, so you can only access 
             // shared things - hair color, eye color, and the greet method.
             foreach (var head in heads)
             {
-                Console.WriteLine($"The {head.HairColor} headed, {head.EyeColor} eyed head is greeting you...");
+                Console.WriteLine($"The {head.HairColor} haired, {head.EyeColor} eyed head is greeting you...");
                 head.Greet();
             }
 
@@ -53,7 +60,15 @@ namespace InheritanceAndComposition
 
             farmerTorso.PickUp("goat in pjs");
             ninjaTorso.PickUp("Box");
-            
+
+            var cyclistLegs = new CyclistLegs();
+            var countryMusicSingerLegs = new CountryMusicSingerLegs("blue jeans", false);
+
+            var astronaut = new Minifigure("Major Tom", astronautHead, ninjaTorso, cyclistLegs);
+            var cowgirlJessy = new Minifigure("Jessy", cowgirlHead, farmerTorso, countryMusicSingerLegs);
+
+            cowgirlJessy.SayHello();
+            astronaut.SayHello();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace InheritanceAndComposition.LegoPieces.Legs
         public bool IsShaved { get; }
 
         // constructor
-        public Legs(string clothing, string shoes, bool isShaved)
+        protected Legs(string clothing, string shoes, bool isShaved)
         {
             Clothing = clothing;
             Shoes = shoes;
@@ -30,5 +30,7 @@ namespace InheritanceAndComposition.LegoPieces.Legs
         {
             Console.WriteLine("The legs kicked vigorously.");
         }
+
+        public abstract void Dance();
     }
 }

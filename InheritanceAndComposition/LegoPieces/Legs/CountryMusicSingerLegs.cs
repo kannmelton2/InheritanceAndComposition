@@ -4,16 +4,16 @@ using System.Text;
 
 namespace InheritanceAndComposition.LegoPieces.Legs
 {
-    class CyclistLegs : Legs
+    class CountryMusicSingerLegs : Legs
     {
         // constructor
-        public CyclistLegs() : base("bike shorts", "cycling shoes", true)
+        public CountryMusicSingerLegs(string clothing, bool isShaved) : base(clothing, "boots", isShaved)
         { }
 
         // methods
         public override void Dance()
         {
-            Console.WriteLine("Too busy biking to dance.");
+            Console.WriteLine("Country music singer legs do a square dance.");
         }
     }
 }

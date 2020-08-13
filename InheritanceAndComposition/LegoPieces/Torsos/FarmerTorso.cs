@@ -16,5 +16,10 @@ namespace InheritanceAndComposition.LegoPieces.Torsos
             // The sex is set when instaniated
             Sex = sex;
         }
+
+        protected override bool IsStrong()
+        {
+            return Sex == Sex.Female;
+        }
     }
 }

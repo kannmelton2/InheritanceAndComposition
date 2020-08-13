@@ -2,7 +2,7 @@
 
 namespace InheritanceAndComposition.LegoPieces.Heads
 {
-    class Cowgirl : Head
+    class CowgirlHead : Head
     {
         // properties
         public bool HasHat { get; set; }
